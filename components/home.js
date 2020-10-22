@@ -52,7 +52,9 @@
                 error_field.insertAdjacentHTML("beforeend", "Succes Registration");
                 setTimeout(function () {
                     username.text("");
-                    // here reset all input field's' like : username,email,pass,type,accept
+
+                    resetInputs();
+
                     error_field.innerHTML = "";
                 }, 5000);
 
@@ -73,4 +75,8 @@
                 document.location.replace("/user/index");
             }
         }
+
     });
+        function resetInputs(){
+            //here comes reset inputs
+        }
