@@ -27,9 +27,4 @@
                 echo 'client';
             }
         }
-
-        function test(){
-            require_once ROOT . '/view/home.php';
-            return true;
-        }
     }

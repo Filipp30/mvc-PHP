@@ -51,10 +51,7 @@
                 error_field.innerHTML = "";
                 error_field.insertAdjacentHTML("beforeend", "Succes Registration");
                 setTimeout(function () {
-                    username.text("");
-
                     resetInputs();
-
                     error_field.innerHTML = "";
                 }, 5000);
 
@@ -76,7 +73,11 @@
             }
         }
 
-    });
         function resetInputs(){
-            //here comes reset inputs
+            username.text("");
+            email.text("");
+            pass.text("");
+            console.log("resetFunction working from home.js");
         }
+
+    });
