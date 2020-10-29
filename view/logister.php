@@ -5,12 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logistics</title>
+    <title>Logister</title>
 </head>
 <body>
-<h1>Logistics   Hello World</h1>
-<button onclick="testfunc()">go to home page</button>
-<div id="testfield"></div>
-<script src="/components/test.js"></script>
+<h1>Logistics Page</h1>
+<button onclick="home()">Back to Home-page</button>
+<script src="/components/js/logister.js"></script>
 </body>
 </html>

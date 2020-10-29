@@ -1,7 +1,6 @@
 
     $(document).ready(function () {
         $(".btn_register").click(function () {
-            console.log("test");
             let error_field = document.querySelector("#error_field");
             let username = $("#username").val();
             let email = $("#email").val();
@@ -42,11 +41,6 @@
 
         function func_return_status_registration(data) {
             let error_field = document.querySelector("#error_field");
-            let username = $("#username").val("");
-            let email = $("#email").val();
-            let pass = $("#pass").val();
-            let type = $(".type:checked").val();
-            let accept = $(".accept_right:checked").val();
             if (data == true) {
                 error_field.innerHTML = "";
                 error_field.insertAdjacentHTML("beforeend", "Succes Registration");
@@ -74,10 +68,11 @@
         }
 
         function resetInputs(){
-            username.text("");
-            email.text("");
-            pass.text("");
             console.log("resetFunction working from home.js");
-        }
+            $("#username").val("");
+            $("#email").val("");
+            $("#pass").val("");
+            //radio buttons leegmaken;
 
+        }
     });
