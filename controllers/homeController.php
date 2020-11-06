@@ -21,9 +21,10 @@
             if ($result_sing_in==false){
                 echo false;
             }elseif ($result_sing_in->usertype == 'logister'){
-                //set cookie
+//                setcookie("username",$username,time()+360);
                echo 'logister';
             }elseif ($result_sing_in->usertype == 'client'){
+                //set cookie
                 echo 'client';
             }
         }

@@ -5,8 +5,8 @@
             let username = $("#username").val();
             let email = $("#email").val();
             let pass = $("#pass").val();
-            let type = $(".type:checked").val();
-            let accept = $(".accept_right:checked").val();
+            let type = $("#type:checked").val();
+            let accept = $("#accept_right:checked").val();
             if (username.length === 0 || email.length === 0 || pass.length === 0) {
                 error_field.innerHTML = "";
                 error_field.insertAdjacentHTML("beforeend", "Input field's are empty");
@@ -68,11 +68,10 @@
         }
 
         function resetInputs(){
-            console.log("resetFunction working from home.js");
             $("#username").val("");
             $("#email").val("");
             $("#pass").val("");
-            //radio buttons leegmaken;
-
+            $('input[name="radio"]').prop('checked', false);
+            $('input[name="accept_right"]').prop('checked', false);
         }
     });

@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="/view/home.css">
 </head>
 <body>
-
  <div class="container1">
 
         <div class="registration">
-                    <h1>Registration</h1>
+                        <h1>Registration</h1>
                         <label for="username">UserName</label><br>
                             <input type="text" placeholder="Username" name="username" id="username"><br>
                                 <label for="email">E-mail</label><br>
@@ -21,10 +20,13 @@
                                 <label for="pass">Password</label><br>
                                 <input type="password" name="pass" id="pass"><br><br>
 
-                                <label>Client</label><input type="radio" name="radio" class="type" value="client"><br>
-                                <label>Logister</label><input type="radio" name="radio" class="type" value="logister"><br><br>
+                                    <label>Client</label>
+                                    <input type="radio" name="radio" class="type" id="type" value="client"><br>
+                                    <label>Logister</label>
+                                    <input type="radio" name="radio" class="type" id="type" value="logister"><br><br>
+
                                 <label for="accept_right">Accept the right's en Coockie</label><br>
-                            <input type="radio" name="accept_right" class="accept_right" value="accept"><br>
+                            <input type="radio" name="accept_right" class="accept_right" id="accept_right" value="accept"><br>
                         <input type="button" class="btn_register" value="Register">
             <div class="error_field" id="error_field"></div>
         </div>
