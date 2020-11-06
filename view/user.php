@@ -8,6 +8,7 @@
     <title>User</title>
 </head>
 <body>
+<?php echo $_COOKIE['username']; ?>
 <h1>User</h1>
 <button onclick="home()">Back to Home-page</button>
 <script src="/components/js/user.js"></script>

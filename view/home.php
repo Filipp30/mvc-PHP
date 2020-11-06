@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/view/home.css">
 </head>
 <body>
+<div><?php require 'view/blocks/header.php'  ?></div>
+//cockie aanpassen om doorverwezen te worden naar home page indien niet aangemeld;
  <div class="container1">
 
         <div class="registration">
