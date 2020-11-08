@@ -8,12 +8,12 @@
                 require_once ROOT . '/view/home.php';
             }else{
                 if ($_COOKIE['type'] == 'logister'){
-                    require_once ROOT . '/view/logister.php';
-                    //deze wijzigen van pagina laden naar doorwijzen naar pagina header
+                    header('Location:/logister.php');
+
                 }elseif ($_COOKIE['type'] == 'client'){
-                    require_once ROOT . '/view/user.php';
+                    header('Location:/user.php');
                 }else{
-                    require_once ROOT . '/view/home.php';
+                    header('Location:/home.php');
                 }
             }
             return true;

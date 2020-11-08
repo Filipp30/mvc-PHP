@@ -9,10 +9,10 @@
 </head>
 <?php if (! $_COOKIE['type'] == ''):?>
 <body>
-<?php echo $_COOKIE['username']; ?>
+<h3>Welcoom <?php echo $_COOKIE['username']; ?></h3>
 <h1>Logistics Page</h1>
 <button onclick="home()">Back to Home-page</button>
-<button id="sing_out" ">Sing Out</button> // deze moet nog een functionaliteit krijgen
+<button onclick="sing_out()">Sing Out</button>
     <script src="/components/js/logister.js"></script>
 </body>
 <?php

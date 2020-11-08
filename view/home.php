@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="/view/home.css">
 </head>
 <body>
-<div><?php require 'view/blocks/header.php'  ?></div>
-//cockie aanpassen om doorverwezen te worden naar home page indien niet aangemeld;
+
  <div class="container1">
 
         <div class="registration">
@@ -41,6 +40,7 @@
                     <input type="password" name="pass" id="pass_sing"><br><br>
                     <input type="button" class="btn_sing" value="singin">
                     <div class="error_field" id="error_field_sing"></div>
+                    <p>deze error field verbergen indien leeg en niet nodig </p>
                 </div>
 
  </div>
