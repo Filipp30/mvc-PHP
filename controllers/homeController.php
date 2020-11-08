@@ -4,7 +4,7 @@
     class homeController{
 
         function index(){
-            if ($_COOKIE['type'] == ''){
+            if (!isset($_COOKIE['type'])){
                 require_once ROOT . '/view/home.php';
             }else{
                 if ($_COOKIE['type'] == 'logister'){
@@ -13,7 +13,7 @@
                 }elseif ($_COOKIE['type'] == 'client'){
                     header('Location:/user.php');
                 }else{
-                    header('Location:/home.php');
+                    require_once ROOT . '/view/home.php';
                 }
             }
             return true;

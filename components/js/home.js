@@ -1,22 +1,26 @@
+    document.getElementById("error_field_sing").style.visibility = 'hidden';
+    document.getElementById("error_field").style.visibility='hidden';
 
     $(document).ready(function () {
         $(".btn_register").click(function () {
-            let error_field = document.querySelector("#error_field");
             let username = $("#username").val();
             let email = $("#email").val();
             let pass = $("#pass").val();
             let type = $("#type:checked").val();
             let accept = $("#accept_right:checked").val();
             if (username.length === 0 || email.length === 0 || pass.length === 0) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "Input field's are empty");
+                document.getElementById("error_field").style.visibility='visible';
+                document.getElementById("error_field").innerText="Input field's are empty";
+                setTimeout(function(){hideErrorRegField()},4000);
             } else if (type === undefined) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "Make a chois: Client or Logister");
+                document.getElementById("error_field").style.visibility='visible';
+                document.getElementById("error_field").innerText="Make a chois: Client or Logister";
+                setTimeout(function(){hideErrorRegField()},4000);
             } else if (accept === undefined) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "Pleas eccept the rigth's and Cockie");
-                alert("Pleas eccept the rigth's and Cockie")
+                document.getElementById("error_field").style.visibility='visible';
+                document.getElementById("error_field").innerText="Pleas eccept the rigth's and Cockie";
+                alert("Pleas eccept the rigth's and Cockie");
+                setTimeout(function(){hideErrorRegField()},4000);
             } else {
                 $.ajax({
                     url: '/home/registration/' + username + '/' + email + '/' + pass + '/' + type,
@@ -25,12 +29,16 @@
             }
         });
         $(".btn_sing").click(function () {
-            let errorfield = document.querySelector("#error_field_sing");
+
             let username = $("#username_sing").val();
             let pass = $("#pass_sing").val();
             if (username.length === 0 || pass.length === 0) {
-                errorfield.innerHTML = "";
-                errorfield.insertAdjacentHTML("beforeend", "Enter username & password");
+                document.getElementById("error_field_sing").style.visibility = 'visible';
+                document.getElementById("error_field_sing").innerText="Enter username & password";
+                setTimeout(function (){
+                    document.getElementById("error_field_sing").style.visibility = 'hidden';
+                },5000);
+
             } else {
                 $.ajax({
                     url: '/home/sing_in/' + username + '/' + pass,
@@ -40,26 +48,27 @@
         });
 
         function func_return_status_registration(data) {
-            let error_field = document.querySelector("#error_field");
             if (data == true) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "Succes Registration");
+                document.getElementById("error_field").style.visibility='visible';
+                document.getElementById("error_field").innerText="Success";
                 setTimeout(function () {
                     resetInputs();
-                    error_field.innerHTML = "";
+                    hideErrorRegField();
                 }, 5000);
 
             } else if (data == false) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "User Exist , you can sing in");
+                document.getElementById("error_field").style.visibility='visible';
+                document.getElementById("error_field").innerText="User Exist , you can sing in";
+                setTimeout(function(){hideErrorRegField();},4000);
             }
         }
 
         function func_return_singin_status(data) {
-            let error_field = document.querySelector("#error_field_sing");
             if (data == false) {
-                error_field.innerHTML = "";
-                error_field.insertAdjacentHTML("beforeend", "Wrong username of password");
+                document.getElementById("error_field_sing").style.visibility='visible';
+                document.getElementById("error_field_sing").innerText="Wrong username of password"
+               setTimeout(function (){
+                   document.getElementById("error_field_sing").style.visibility='hidden';},5000);
             } else if (data === 'logister') {
                 document.location.replace("/logister/index");
             } else if (data === 'client') {
@@ -73,5 +82,8 @@
             $("#pass").val("");
             $('input[name="radio"]').prop('checked', false);
             $('input[name="accept_right"]').prop('checked', false);
+        }
+        function hideErrorRegField(){
+            document.getElementById("error_field").style.visibility='hidden';
         }
     });

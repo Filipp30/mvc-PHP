@@ -40,7 +40,6 @@
                     <input type="password" name="pass" id="pass_sing"><br><br>
                     <input type="button" class="btn_sing" value="singin">
                     <div class="error_field" id="error_field_sing"></div>
-                    <p>deze error field verbergen indien leeg en niet nodig </p>
                 </div>
 
  </div>
