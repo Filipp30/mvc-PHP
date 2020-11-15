@@ -4,6 +4,7 @@
     $(document).ready(function () {
         // OnClick REGISTRATION BUTTON :
         $(".btn_register").click(function () {
+            resetInputs_sing_in();
             let username = $("#username").val();
             let email = $("#email").val();
             let pass = $("#pass").val();
@@ -40,7 +41,7 @@
                 document.getElementById("error_field").style.visibility='visible';
                 document.getElementById("error_field").innerText="Success";
                 setTimeout(function () {
-                    resetInputs();
+                    resetInputs_registration();
                     hideErrorRegField();
                 }, 5000);
 
@@ -87,7 +88,7 @@
         }
         //-------------------------------------------------------------------------//
         //reset input's after registration;
-        function resetInputs(){
+        function resetInputs_registration(){
             $("#username").val("");
             $("#email").val("");
             $("#pass").val("");
