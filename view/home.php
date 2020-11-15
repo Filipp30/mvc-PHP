@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grig-Home</title>
     <link rel="stylesheet" href="/view/styles/home.css">
-    <script src="/view/styles/style.js"></script>
 </head>
 
 <body>
@@ -15,20 +14,20 @@
  <div class="container1">
 
         <div class="registration">
-                        <div id="h1_registration"><h1>Registration</h1></div>
-                        <label for="username">UserName</label><br>
-                            <input type="text" placeholder="Username" name="username" id="username"><br>
-                                <label for="email">E-mail</label><br>
+                        <div id="titel_reg"><h1>Registration</h1></div>
+                                <label id="username" for="username">UserName</label><br>
+                                <input type="text" placeholder="Username" name="username" id="username"><br>
+                                <label id="email" for="email">E-mail</label><br>
                                 <input type="text" placeholder="E-mail" name="email" id="email"><br>
-                                <label for="pass">Password</label><br>
+                                <label id="pass" for="pass">Password</label><br>
                                 <input type="password" name="pass" id="pass"><br><br>
 
-                                    <label>Client</label>
+                                    <label id="client">Client</label>
                                     <input type="radio" name="radio" class="type" id="type" value="client"><br>
-                                    <label>Logister</label>
+                                    <label id="logister">Logister</label>
                                     <input type="radio" name="radio" class="type" id="type" value="logister"><br><br>
 
-                                <label for="accept_right">Accept the right's en Coockie</label><br>
+                                <label id="accept" for="accept_right">Accept the right's en Coockie</label><br>
                             <input type="radio" name="accept_right" class="accept_right" id="accept_right" value="accept"><br>
                         <input type="button" class="btn_register" value="Register">
             <div class="error_field" id="error_field"></div>
@@ -47,6 +46,6 @@
  </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script src="/components/js/home.js"></script>
-
+ <script src="/view/styles/style.js"></script>
 </body>
 </html>
