@@ -7,13 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Grig-Home</title>
     <link rel="stylesheet" href="/view/styles/home.css">
+    <script src="/view/styles/style.js"></script>
 </head>
+
 <body>
 
  <div class="container1">
 
         <div class="registration">
-                        <h1>Registration</h1>
+                        <div id="h1_registration"><h1>Registration</h1></div>
                         <label for="username">UserName</label><br>
                             <input type="text" placeholder="Username" name="username" id="username"><br>
                                 <label for="email">E-mail</label><br>
