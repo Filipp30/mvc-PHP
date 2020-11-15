@@ -52,6 +52,7 @@
         }
         //----------------------------------------------------------------------------------//
         //OnClick SING IN BUTTON:
+        // !!!!! input field empty not working after sing in if user not exist
         $(".btn_sing").click(function () {
 
             let username = $("#username_sing").val();
@@ -93,6 +94,12 @@
             $('input[name="radio"]').prop('checked', false);
             $('input[name="accept_right"]').prop('checked', false);
         }
+        //reset input's after singin
+        function resetInputs_sing_in(){
+            $("#username_sing").val("");
+            $("#pass_sing").val("");
+        }
+
         //hidden error field when not need/use
         function hideErrorRegField(){
             document.getElementById("error_field").style.visibility='hidden';
