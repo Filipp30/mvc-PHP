@@ -9,9 +9,11 @@
             }else{
                 if ($_COOKIE['type'] == 'logister'){
                     header('Location:/logister.php');
+                    exit();
 
                 }elseif ($_COOKIE['type'] == 'client'){
                     header('Location:/user.php');
+                    exit();
                 }else{
                     require_once ROOT . '/view/home.php';
                 }

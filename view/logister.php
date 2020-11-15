@@ -17,6 +17,7 @@
 </body>
 <?php
 else: header('Location:/home.php');
+exit();
 endif;
 ?>
 
