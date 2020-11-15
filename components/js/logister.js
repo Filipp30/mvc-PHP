@@ -1,7 +1,6 @@
-
+//testing coockie when return to home page
 function home(){
     document.location.replace("/home/index");
-    console.log(document.cookie);
 }
 //Delete Cookie
 function sing_out(){

@@ -7,10 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User</title>
 </head>
-<body>
-<?php echo $_COOKIE['username']; ?>
-<h1>User</h1>
-<button onclick="home()">Back to Home-page</button>
-<script src="/components/js/user.js"></script>
-</body>
+<?php if (! $_COOKIE['type'] == ''):?>
+    <body>
+    <h3>Welcoom <?php echo $_COOKIE['username']; ?></h3>
+    <h1>Shop - Page</h1>
+    <button onclick="home()">Back to Home-page</button>
+    <button onclick="sing_out()">Sing Out</button>
+    <script src="/components/js/user.js"></script>
+    </body>
+<?php
+else: header('Location:/home.php');
+    exit();
+endif;
+?>
+
 </html>

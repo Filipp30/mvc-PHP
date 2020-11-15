@@ -48,7 +48,7 @@
                 setTimeout(function(){hideErrorRegField();},4000);
             }
         }
-
+        //----------------------------------------------------------------------------------//
         //OnClick SING IN BUTTON:
         $(".btn_sing").click(function () {
 
@@ -82,6 +82,7 @@
                 document.location.replace("/user/index");
             }
         }
+        //-------------------------------------------------------------------------//
         //reset input's after registration;
         function resetInputs(){
             $("#username").val("");
