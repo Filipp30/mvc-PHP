@@ -20,8 +20,10 @@
             }
             return true;
         }
+        //-----------------------------------------------------------------//
         //connected with home.js 36
         function registration($username,$email,$pass,$typeUser){
+            // MD5  to password !!!
                 $resultUserExist = homeModel::insertIntoUsers($username, $email, $pass, $typeUser);
                 if ($resultUserExist == true) {
                     //return data to home.js 36
@@ -32,8 +34,10 @@
                 }
                 return true;
         }
+        //-------------------------------------------------------//
         //connected with home.js 53
         function sing_in($username,$pass){
+            //MD5 From password
             $result_sing_in=homeModel::selectIfExist($username,$pass);
             if ($result_sing_in==false){
                 echo false;

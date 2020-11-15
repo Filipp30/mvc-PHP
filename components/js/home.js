@@ -26,13 +26,15 @@
             } else {
                 //if ALL inputs Not empty: controler->homeController->function registration
                 // homeController return if user exist or Not to func_return_status_registration
+                // homeController registration 24
                 $.ajax({
                     url: '/home/registration/' + username + '/' + email + '/' + pass + '/' + type,
                     success: func_return_status_registration
                 });
             }
         });
-        // data :from return homeController/registration - to func_return_status_registration(data)
+        // data :from return homeController/registration  - to func_return_status_registration(data)
+        // homeController registration 24
         function func_return_status_registration(data) {
             if (data == true) {
                 document.getElementById("error_field").style.visibility='visible';
