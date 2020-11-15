@@ -39,13 +39,15 @@
         function sing_in($username,$pass){
             //MD5 From password
             $result_sing_in=homeModel::selectIfExist($username,$pass);
+
             if ($result_sing_in==false){
-                echo false;
+                echo false; //home.js 47
             }elseif ($result_sing_in->usertype == 'logister'){
                 setcookie('username',$username, time() + 60, "/");
                 setcookie('type','logister',time() + 60,"/");
                 //send type to home.js  73
                echo 'logister';
+
             }elseif ($result_sing_in->usertype == 'client'){
                 setcookie('username',$username, time() + 60, "/");
                 setcookie('type','client',time() + 60, '/');

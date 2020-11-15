@@ -19,19 +19,14 @@
             }
         }
         public static function selectIfExist($username,$pass){
-            $sql="SELECT * FROM users WHERE username = ? AND pass = ? LIMIT 1";
-            $pdo = dbConnection::getDbConnection();
-            $query=$pdo->prepare($sql);
-            $query->execute([$username,$pass]);
-            $if_exist = $query->fetch(PDO::PARAM_BOOL);
-            if ($if_exist==true){
+
                 $sql="SELECT usertype FROM users WHERE username = ? AND pass = ? ";
                 $pdo = dbConnection::getDbConnection();
                 $query=$pdo->prepare($sql);
                 $query->execute([$username,$pass]);
-                return $result= $query->fetch(PDO::FETCH_OBJ);
-                }elseif($if_exist==false){
-                return false;
-            }
+                $result= $query->fetch(PDO::FETCH_OBJ);
+                return $result;
+
         }
     }
+
