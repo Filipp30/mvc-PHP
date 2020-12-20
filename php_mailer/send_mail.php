@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
 
 // Instantiation and passing `true` enables exceptions
 
-function send_mail(){
+
     $mail = new PHPMailer(true);
     try {
         //Server settings
@@ -25,8 +25,8 @@ function send_mail(){
         $mail->Port       = 2525;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
-        $mail->setFrom('filipp@stuworld.space', 'Admin-stuWorld');
-        $mail->addAddress('filipp-tts@outlook.com', 'User');     // Add a recipient
+        $mail->setFrom('filipp@stuworld.space', 'Filipp-stuWorld');
+        $mail->addAddress($_SESSION['user_mail'], 'Welkoom');     // Add a recipient
 
         // Attachments
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -34,8 +34,8 @@ function send_mail(){
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+        $mail->Subject = 'Rigistration succesfull';
+        $mail->Body    = 'Welkoom , bedankt voor de registratie en u kunt uw nu aanmelden';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -43,4 +43,5 @@ function send_mail(){
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-}
+
+
