@@ -43,7 +43,7 @@
                 setTimeout(function () {
                     resetInputs_registration();
                     hideErrorRegField();
-                }, 5000);
+                }, 3000);
 
             } else if (data == false) {
                 document.getElementById("error_field").style.visibility='visible';
