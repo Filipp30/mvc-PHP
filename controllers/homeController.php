@@ -1,8 +1,7 @@
 <?php
-
+    session_start();
     include_once ROOT.'/models/homeModel.php';
     class homeController{
-
         function index(){
             if (!isset($_COOKIE['type'])){
                 require_once ROOT . '/view/home.php';
@@ -26,6 +25,7 @@
             // MD5  to password !!!
                 $resultUserExist = homeModel::insertIntoUsers($username, $email, $pass, $typeUser);
                 if ($resultUserExist == true) {
+                    $_SESSION['user_mail'] = $email;
                     //return data to home.js 36
                     echo true;
                 } else {
@@ -55,4 +55,5 @@
                 echo 'client';
             }
         }
+
     }

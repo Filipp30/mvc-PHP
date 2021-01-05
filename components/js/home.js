@@ -39,11 +39,12 @@
         function func_return_status_registration(data) {
             if (data == true) {
                 document.getElementById("error_field").style.visibility='visible';
-                document.getElementById("error_field").innerText="Success";
+                document.getElementById("error_field").innerText="Check your mail";
+                fetch('/php_mailer/send_mail.php');
                 setTimeout(function () {
                     resetInputs_registration();
                     hideErrorRegField();
-                }, 5000);
+                }, 3000);
 
             } else if (data == false) {
                 document.getElementById("error_field").style.visibility='visible';
@@ -105,4 +106,5 @@
         function hideErrorRegField(){
             document.getElementById("error_field").style.visibility='hidden';
         }
+
     });
