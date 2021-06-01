@@ -17,15 +17,15 @@ require 'vendor/autoload.php';
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
         $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'mail.adm.tools';                    // Set the SMTP server to send through
+        $mail->Host       = 'xxxxxxxxxx';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'filipp@stuworld.space';                     // SMTP username
-        $mail->Password   = '@azerty123';                               // SMTP password
+        $mail->Username   = 'xxxxxxxxxxx';                     // SMTP username
+        $mail->Password   = 'xxxxxx';                               // SMTP password
         $mail->SMTPSecure = 'SMTP';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $mail->Port       = 2525;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->Port       = 111111;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
-        $mail->setFrom('filipp@stuworld.space', 'Filipp-stuWorld');
+        $mail->setFrom('xxxxxxxxxxx', 'xxxxxxxxx');
         $mail->addAddress($_SESSION['user_mail'], 'Welkoom');     // Add a recipient
 
         // Attachments
